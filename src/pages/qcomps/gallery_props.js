@@ -1,55 +1,40 @@
+function Scientist({scientist, size = 100}){
+  return(
+    <section className="profile">
+        <h2>{scientist.ScientistName}</h2>
+        <img
+          className="avatar"
+          src={scientist.Imgsrc}
+          alt={scientist.ScientistName}
+          width={70}
+          height={70}
+        />
+        <ul>
+          <li>
+            <b>Profession: </b>
+            {scientist.Profession}
+          </li>
+          <li>
+            <b>Awards: {scientist.AwardNum} </b>
+            ({scientist.Award})
+          </li>
+          <li>
+            <b>Discovered: </b>
+            {scientist.Discovered}
+          </li>
+        </ul>
+      </section>
+      )
+}
+
 export default function Gallery() {
   return (
     <div>
       <h1>Notable Scientists</h1>
-      <section className="profile">
-        <h2>Maria Skłodowska-Curie</h2>
-        <img
-          className="avatar"
-          src='https://i.imgur.com/szV5sdGs.jpg'
-          alt="Maria Skłodowska-Curie"
-          width={70}
-          height={70}
-        />
-        <ul>
-          <li>
-            <b>Profession: </b>
-            physicist and chemist
-          </li>
-          <li>
-            <b>Awards: 4 </b>
-            (Nobel Prize in Physics, Nobel Prize in Chemistry, Davy Medal, Matteucci Medal)
-          </li>
-          <li>
-            <b>Discovered: </b>
-            polonium (element)
-          </li>
-        </ul>
-      </section>
-      <section className="profile">
-        <h2>Katsuko Saruhashi</h2>
-        <img
-          className="avatar"
-          src='https://i.imgur.com/YfeOqp2s.jpg'
-          alt="Katsuko Saruhashi"
-          width={70}
-          height={70}
-        />
-        <ul>
-          <li>
-            <b>Profession: </b>
-            geochemist
-          </li>
-          <li>
-            <b>Awards: 2 </b>
-            (Miyake Prize for geochemistry, Tanaka Prize)
-          </li>
-          <li>
-            <b>Discovered: </b>
-            a method for measuring carbon dioxide in seawater
-          </li>
-        </ul>
-      </section>
+      <Scientist scientist = {{ScientistName:'Maria Skłodowska-Curie',Imgsrc : 'https://i.imgur.com/szV5sdGs.jpg',Profession:'physicist and chemist'
+      ,AwardNum : '4', Award :'Nobel Prize in Physics, Nobel Prize in Chemistry, Davy Medal, Matteucci Medal', Discovered:'polonium (element)'}} size = {200}></Scientist>
+      <Scientist scientist = {{ScientistName:'Katsuko Saruhashi',Imgsrc : 'https://i.imgur.com/YfeOqp2s.jpg', Discovered:'a method for measuring carbon dioxide in seawater',Profession:'geochemist'
+      ,AwardNum : '2', Award :'Miyake Prize for geochemistry, Tanaka Prize'}} size = {200}></Scientist>
     </div>
   );
 }
